@@ -4,6 +4,7 @@ import GetCamisasRouter from './routes/GetCamisas.routes.js';
 import EditarPerfil from './routes/EditarPerfil.routes.js';
 import GetCamisasServiciosRouter from './routes/GetCamisasServicios.routes.js';
 import GetCarritoRouter from './routes/GetCarrito.routes.js';
+import GetPedido from './routes/GetPedido.routes.js';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(GetCamisasRouter);
 app.use(EditarPerfil);
 app.use(GetCamisasServiciosRouter);
 app.use(GetCarritoRouter);
+app.use(GetPedido);
 
 app.listen(4000);
 console.log("Server running on port 4000");
