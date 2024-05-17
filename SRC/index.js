@@ -7,6 +7,7 @@ import GetCarritoRouter from './routes/GetCarrito.routes.js';
 import GetPedido from './routes/GetPedido.routes.js';
 import GetClientes from './routes/GetClientes.routes.js';
 import GetProductos from './routes/GetProductos.routes.js';
+import PostProductoPedido from './routes/PostProductoPedido.routes.js';
 
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(GetCarritoRouter);
 app.use(GetPedido);
 app.use(GetClientes);
 app.use(GetProductos);
+app.use(PostProductoPedido);
 
 app.listen(4000);
 console.log("Server running on port 4000");
