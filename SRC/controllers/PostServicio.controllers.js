@@ -2,7 +2,8 @@ import { pool } from '../db.js';
 
 export const PostServicio = async(req, res) => {
     try {
-        const { servicio, tamano, calidad, area, precio, imagen } = req.body;
+        const { servicio, tamano, calidad, area, precio } = req.body;
+        const imagen = req.file ? req.file.path : null;
         const sql = `INSERT INTO SERVICIOS (\`TIPO-SERVICIO\`, \`tamaño\`, \`calidad\`, \`AREA\`, \`PRECIO\`, \`IMAGEN\`) VALUES (?, ?, ?, ?, ?, ?)`;
         const [results] = pool.query(sql,[servicio, tamano, calidad, area, precio, imagen]);
         if (results.affectedRows > 0){

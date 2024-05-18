@@ -4,9 +4,19 @@ export const EditarPerfil = async (req, res) => {
     try {
         const userId = req.params.userId;
         const datos = req.body;
+        const imagen = req.file ? req.file.path : null;
         console.log(userId);
-        const sql = 'UPDATE CLIENTES SET CORREO = ?, CONTRASEÑA = ?, NOMBRE = ?, TELEFONO = ?, DIRECCION = ?  WHERE `ID-CLIENTE` = ?';
-        const result = await pool.query(sql, [datos.email, datos.password, datos.name, datos.phone, datos.address, userId]);
+        
+        let sql = 'UPDATE CLIENTES SET CORREO = ?, CONTRASEÑA = ?, NOMBRE = ?, TELEFONO = ?, DIRECCION = ?';
+        const params = [datos.email, datos.password, datos.name, datos.phone, datos.address];
+        if (imagen) {
+            sql += ', IMAGEN = ?';
+            params.push(imagen);
+        }
+        sql += ' WHERE `ID-CLIENTE` = ?';
+        params.push(userId);
+
+        const [result] = await pool.query(sql, params);
         console.log(result);
 
         if (result.affectedRows > 0) {

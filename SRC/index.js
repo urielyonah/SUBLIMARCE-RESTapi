@@ -26,6 +26,7 @@ app.use(session({
     resave:false,
     saveUninitialized:false
 }));
+app.use('/images', express.static('uploads'));
 
 app.use('/DeleteCarrito', DeleteCarritoRouter);
 app.use('/GetCamisas', GetCamisasRouter);
