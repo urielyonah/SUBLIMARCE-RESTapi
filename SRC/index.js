@@ -14,6 +14,9 @@ import Login from './routes/Login.routes.js';
 import LoginAdmin from './routes/LoginAdmin.routes.js';
 import PostCamisasServicios from './routes/PostCamisasServicios.routes.js';
 import PostPedido from './routes/PostPedido.routes.js';
+import PostServicio from './routes/PostServicio.routes.js';
+import PostClientes from './routes/PostClientes.routes.js';
+import PutEstatus from './routes/PutEstatus.routes.js';
 
 const app = express();
 
@@ -37,6 +40,9 @@ app.use('/Login', Login);
 app.use('/LoginAdmin', LoginAdmin);
 app.use('/PostCamisasServicios', PostCamisasServicios);
 app.use('/PostPedido', PostPedido);
+app.use('/PostServicio', PostServicio);
+app.use('/PostClientes', PostClientes);
+app.use('/PutStatus', PutEstatus);
 
 app.listen(4000);
 console.log("Server running on port 4000");
