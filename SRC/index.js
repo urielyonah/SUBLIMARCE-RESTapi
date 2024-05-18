@@ -12,6 +12,7 @@ import GetProductos from './routes/GetProductos.routes.js';
 import PostProductoPedido from './routes/PostProductoPedido.routes.js';
 import Login from './routes/Login.routes.js';
 import LoginAdmin from './routes/LoginAdmin.routes.js';
+import PostCamisasServicios from './routes/PostCamisasServicios.routes.js';
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use('/GetProductos', GetProductos);
 app.use('/PostProductoPedido', PostProductoPedido);
 app.use('/Login', Login);
 app.use('/LoginAdmin', LoginAdmin);
+app.use('/PostCamisasServicios', PostCamisasServicios);
 
 app.listen(4000);
 console.log("Server running on port 4000");
