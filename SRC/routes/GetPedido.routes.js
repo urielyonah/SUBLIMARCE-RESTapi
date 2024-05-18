@@ -3,6 +3,6 @@ import { GetPedido } from "../controllers/GetPedido.controllers.js";
 
 const router = Router();
 
-router.get('/GetPedido/:userId', GetPedido);
+router.get('/:userId', GetPedido);
 
 export default router;

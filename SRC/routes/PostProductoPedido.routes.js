@@ -3,6 +3,6 @@ import { PostProductoPedido } from "../controllers/PostProductoPedido.controller
 
 const router = Router();
 
-router.post('/PostProductoPedido/', PostProductoPedido);
+router.post('/', PostProductoPedido);
 
 export default router;

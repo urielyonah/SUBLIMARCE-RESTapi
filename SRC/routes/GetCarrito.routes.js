@@ -3,6 +3,6 @@ import { GetCarrito } from "../controllers/GetCarrito.controllers.js";
 
 const router = Router();
 
-router.get('/GetCarrito/:userId', GetCarrito);
+router.get('/:userId', GetCarrito);
 
 export default router;

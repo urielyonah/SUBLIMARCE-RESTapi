@@ -3,7 +3,7 @@ import { DeleteCarrito } from "../controllers/DeleteCarrito.controllers.js";
 
 const router = Router();
 
-router.delete('/DeleteCarrito/:pedidoId', DeleteCarrito);
+router.delete('/:pedidoId', DeleteCarrito);
 
 
 export default router;

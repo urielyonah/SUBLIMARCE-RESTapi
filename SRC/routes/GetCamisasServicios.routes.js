@@ -3,6 +3,6 @@ import { GetCamisasServicios } from "../controllers/GetCamisasServicios.controll
 
 const router = Router();
 
-router.get('/GetCamisasServicios/:CamisasServiciosId', GetCamisasServicios);
+router.get('/:CamisasServiciosId', GetCamisasServicios);
 
 export default router;

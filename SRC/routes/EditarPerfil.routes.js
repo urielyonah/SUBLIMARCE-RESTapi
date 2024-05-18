@@ -3,7 +3,7 @@ import { EditarPerfil } from "../controllers/EditarPerfil.controllers.js";
 
 const router = Router();
 
-router.put('/EditarPerfil/:userId', EditarPerfil);
+router.put('/:userId', EditarPerfil);
 
 
 export default router;

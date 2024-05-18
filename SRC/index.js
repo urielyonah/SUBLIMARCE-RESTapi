@@ -1,4 +1,6 @@
 import express from 'express';
+import session from 'express-session';
+
 import DeleteCarritoRouter from './routes/DeleteCarrito.routes.js';
 import GetCamisasRouter from './routes/GetCamisas.routes.js';
 import EditarPerfil from './routes/EditarPerfil.routes.js';
@@ -8,21 +10,27 @@ import GetPedido from './routes/GetPedido.routes.js';
 import GetClientes from './routes/GetClientes.routes.js';
 import GetProductos from './routes/GetProductos.routes.js';
 import PostProductoPedido from './routes/PostProductoPedido.routes.js';
-
+import Login from './routes/Login.routes.js';
 
 const app = express();
 
 app.use(express.json());
+app.use(session({
+    secret:'secreto',
+    resave:false,
+    saveUninitialized:false
+}));
 
-app.use(DeleteCarritoRouter);
-app.use(GetCamisasRouter);
-app.use(EditarPerfil);
-app.use(GetCamisasServiciosRouter);
-app.use(GetCarritoRouter);
-app.use(GetPedido);
-app.use(GetClientes);
-app.use(GetProductos);
-app.use(PostProductoPedido);
+app.use('/DeleteCarrito', DeleteCarritoRouter);
+app.use('/GetCamisas', GetCamisasRouter);
+app.use('/EditarPerfil', EditarPerfil);
+app.use('/GetCamisasServicios', GetCamisasServiciosRouter);
+app.use('/GetCarrito', GetCarritoRouter);
+app.use('/GetPedido', GetPedido);
+app.use('/GetClientes', GetClientes);
+app.use('/GetProductos', GetProductos);
+app.use('/PostProductoPedido', PostProductoPedido);
+app.use('/Login', Login);
 
 app.listen(4000);
 console.log("Server running on port 4000");
